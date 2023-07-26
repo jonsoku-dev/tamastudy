@@ -3,6 +3,8 @@ import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
 import { format } from "date-fns";
 import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/Button";
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -93,6 +95,16 @@ const Layout = async ({ children, params: { slug } }: LayoutProps) => {
                   />
                 </div>
               ) : null}
+
+              <Link
+                href={`/r/${slug}/submit`}
+                className={buttonVariants({
+                  variant: "outline",
+                  className: "w-full mb-6",
+                })}
+              >
+                Create post
+              </Link>
             </dl>
           </div>
         </div>
