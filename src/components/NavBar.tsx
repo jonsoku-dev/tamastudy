@@ -1,5 +1,6 @@
 import { getAuthSession } from "@/app/api/auth/[...nextauth]/route";
 import { Icons } from "@/components/Icons";
+import UserAccountNav from "@/components/UserAccountNav";
 import { buttonVariants } from "@/components/ui/Button";
 import Link from "next/link";
 
@@ -17,7 +18,7 @@ const NavBar = async () => {
         </Link>
         {/* TODO: Search bar */}
         {session ? (
-          <p>{`you're logged in`}</p>
+          <UserAccountNav user={session.user} />
         ) : (
           <Link href="/sign-in" className={buttonVariants()}>
             Sign In
