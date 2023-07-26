@@ -1,7 +1,7 @@
-import { getAuthSession } from "@/app/api/auth/[...nextauth]/route";
 import { Icons } from "@/components/Icons";
 import UserAccountNav from "@/components/UserAccountNav";
 import { buttonVariants } from "@/components/ui/Button";
+import { getAuthSession } from "@/lib/auth";
 import Link from "next/link";
 
 const NavBar = async () => {
